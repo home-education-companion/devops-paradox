@@ -16,6 +16,8 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: {{ .Values.service.name }}
-          servicePort: 80
+          service:
+            name: {{ .Values.service.name }}
+            port:
+              number: 80
     host: {{ .Values.ingress.host }}
